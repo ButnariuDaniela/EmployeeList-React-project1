@@ -20,7 +20,7 @@ class UserItem extends React.Component{
                 <p>{ salary }</p>
                 <img width="150px" alt='img' src={photo}></img>
                 {/* <button value={name} onClick={(event) => this.props.deleteUser(event)}>del</button> */}
-                <button onClick={() => this.props.delete(name)}>delet</button>
+                <button onClick={() => this.props.delete(name)}>delete</button>
                 {/* <button>DEL</button> */}
             </div>
         );

@@ -1,5 +1,5 @@
 import React from "react";
-import PostItem from "./PostItem";
+import PostItem from "../PostItem/PostItem";
 
 class PostList extends React.Component{
     constructor(props){
@@ -19,8 +19,9 @@ class PostList extends React.Component{
     }
 
     render(){
+        console.log(this.state)
        return(
-        <div class='post-list'>
+        <div className='post-list'>
             {
                 this.state.posts.map((post, index) => {
                     return <PostItem

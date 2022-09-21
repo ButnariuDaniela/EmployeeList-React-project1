@@ -1,8 +1,8 @@
 import React from "react";
-import {Route, Switch, Link} from 'react-router-dom';
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Page404 from "./pages/Page404";
+import {Route, Switch} from 'react-router-dom';
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Page404 from "./pages/Page404/Page404";
 
 
 class App extends React.Component{

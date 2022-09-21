@@ -1,9 +1,10 @@
 import React from 'react';
-import UserList from '../components/UserList';
-import UserAddForm from '../components/UserAddForm';
-import PostList from '../components/PostList/PostList';
-import '../App.css';
-import Layout from '../components/Layout';
+import UserList from '../../components/UserList/UserList'
+import UserAddForm from '../../components/UserAddForm/UserAddForm';
+import PostList from '../../components/PostList/PostList';
+import '../../App.css';
+import Layout from '../../components/Layout/Layout';
+import {Button} from 'primereact/button';
 
 class Home extends React.Component {
   constructor() {
@@ -39,7 +40,6 @@ class Home extends React.Component {
 
   handleColorChange(event){
     const userColor = event.target.value;
-    // console.log(userColor)
     this.setState({color: userColor});
   }
 
@@ -87,7 +87,6 @@ delete(name){
     usersCopy.splice(index, 1);
     this.setState({users: usersCopy});
   }
-  console.log(index);
   
 }
 
@@ -95,19 +94,21 @@ delete(name){
     return(
       <div className="app" style={{background: this.state.background, color:this.state.color}}>
         <Layout>
-            <h1>Proiectul 1</h1>
-            <div className='buttons-color'>
-            <label htmlFor='background-color'>Background color: </label>
-            <input name="background-color" type="color" onChange={(event) => this.changeColor(event)}/><br/>
-            <label htmlFor="font-color">Font color: </label>
-            <input name="font-color" type="color" onChange={(event) => this.handleColorChange(event)}/><br/>
-            </div>
-            <button className="switch-button" onClick={() => this.handlePost()}>{this.state.showPosts?"Arata Useri":"Arata Postari"}</button> 
-            {this.state.showPosts ? null : <UserAddForm submitAddForm={(event, name, email, isGoldClient, salary, photo) => this.submitAddForm(event, name, email, isGoldClient, salary, photo)}/>}
-            <h1>{this.state.showPosts ? "POSTARI" : "USERI"}</h1>
-            {/* {this.state.showPosts ? <PostList /> : <UserList users={this.state.users} deleteUsers={(event) => this.deleteUsers(event)}/>} */}
-            {this.state.showPosts ? <PostList /> : <UserList users={this.state.users} delete={(name) => this.delete(name)}/>}
-        </Layout>
+              <h1>INCARCARE DINAMICA UTILIZATORI</h1>
+              <div className='buttons-color'>
+                <label htmlFor='background-color'>Background color: </label>
+                <input name="background-color" type="color" className="form-control form-control-color" value='#faf8f2' onChange={(event) => this.changeColor(event)}/><br/>
+                <label htmlFor="font-color">Font color: </label>
+                <input name="font-color" type="color" className="form-control form-control-color" value="#563d7c" onChange={(event) => this.handleColorChange(event)}/><br/>
+              </div>
+              <Button className="switch-button p-button-raised p-button-rounded" onClick={() => this.handlePost()}>
+                {this.state.showPosts?"Arata Useri":"Arata Postari"}
+              </Button> 
+              {this.state.showPosts ? null : <UserAddForm submitAddForm={(event, name, email, isGoldClient, salary, photo) => this.submitAddForm(event, name, email, isGoldClient, salary, photo)}/>}
+              <h1>{this.state.showPosts ? "POSTARI" : "USERI"}</h1>
+              {/* {this.state.showPosts ? <PostList /> : <UserList users={this.state.users} deleteUsers={(event) => this.deleteUsers(event)}/>} */}
+              {this.state.showPosts ? <PostList /> : <UserList users={this.state.users} delete={(name) => this.delete(name)}/>}
+          </Layout>
       </div>
     );
   }

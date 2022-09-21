@@ -1,5 +1,5 @@
 import React from 'react';
-import UserItem from './UserItem';
+import UserItem from '../UserItem/UserItem';
 
 class UserList extends React.Component {
     constructor(props) {
@@ -28,8 +28,9 @@ class UserList extends React.Component {
 
 
     render(){
+        console.log(this.state)
         return (
-            <div className='users-list'>
+            <div class='users-list'>
                 <h2>Lista utilizatorilor:</h2>
                 { this.props.users.map((user, index) => {
                     return <UserItem
