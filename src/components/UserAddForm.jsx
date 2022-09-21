@@ -1,12 +1,15 @@
 import React from 'react';
 import './UserAddForm.css';
+
 class UserAddForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             name: '',
             email: '',
-            isGoldClient: false
+            isGoldClient: false,
+            salary: '',
+            photo: ''
         };
     }
 
@@ -22,13 +25,22 @@ class UserAddForm extends React.Component {
         this.setState({isGoldClient: event.target.checked});
     }
 
+    updatePhoto(event) {
+        let path = event.target.value.split('\\')[2];
+        console.log(path)
+        this.setState({photo: path})
+    }
+    updateSalary(event) {
+        this.setState({salary: event.target.value})
+    }
+
     render() {
-        const {name, email, isGoldClient} = this.state;
+        const {name, email, isGoldClient, salary, photo} = this.state;
 
         return (
             <form
                 className="user-add-form"
-                onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient)}
+                onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient, salary, photo)}
             >
                 <h2>Adauga utilizatori:</h2>
                 <label htmlFor="name">Nume:</label>
@@ -50,7 +62,21 @@ class UserAddForm extends React.Component {
                     value="true"
                     onChange={(event) => this.updateIsGoldClient(event)}
                 />
+                <label htmlFor="salary">Salary:</label>
+                <input 
+                    type="text" 
+                    name="salary"  
+                    onChange={(event) => this.updateSalary(event)}
+                />
 
+                <label htmlFor='myImage'>Photo:</label>
+                <input type="file" 
+                        name="myImage" 
+                        accept="image/png, image/gif, image/jpeg" 
+                        onChange={(event) => this.updatePhoto(event)}
+                />
+                <img src={this.state.photo} alt="imagine" width={"200px"}/>
+                
                 <input type="submit" value="Introdu utilizatorul"/>
             </form>
         )

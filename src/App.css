@@ -6,3 +6,12 @@
 .app h1 {
   margin-top: 0;
 }
+
+.app .buttons-color {
+  display: flex;
+  align-items: flex-start;
+}
+
+.switch-button {
+  max-width: 30%;
+}
