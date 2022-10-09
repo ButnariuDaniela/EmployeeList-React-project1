@@ -5,6 +5,12 @@ import PostList from '../../components/PostList/PostList';
 import '../../App.css';
 import Layout from '../../components/Layout/Layout';
 import {Button} from 'primereact/button';
+import user1 from '../../assets/images/a1.jpg';
+import user2 from '../../assets/images/a2.jpg';
+import user3 from '../../assets/images/a3.jpg';
+import user4 from '../../assets/images/a4.jpg';
+import user5 from '../../assets/images/a5.jpg';
+import user6 from '../../assets/images/a6.jpg';
 
 
 class Home extends React.Component {
@@ -14,7 +20,9 @@ class Home extends React.Component {
       background: 'white',
       color: 'black',
       showPosts: false,
-      users: []
+      users: [],
+      photos: [user1, user2, user3, user4, user5, user6],
+      salaries: [5000, 4890, 6500, 10000, 7100, 9600]
     };
   }
 
@@ -22,10 +30,11 @@ class Home extends React.Component {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(data => {
-        // console.log(data);
         data = data.filter(user => user.id < 7);
         data.forEach(user => {
           user.isGoldClient = true;
+          user.photo = this.state.photos[user.id-1];
+          user.salary = this.state.salaries[user.id-1]
         });
         this.setState({users: data});
       })

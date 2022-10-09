@@ -1,21 +1,10 @@
 import React from 'react';
 import UserItem from '../UserItem/UserItem';
-// import { PhotoService } from '../../PhotoService/PhotoService';
-import user1 from '../../assets/images/a1.jpg';
-import user2 from '../../assets/images/a2.jpg';
-import user3 from '../../assets/images/a3.jpg';
-import user4 from '../../assets/images/a4.jpg';
-import user5 from '../../assets/images/a5.jpg';
-import user6 from '../../assets/images/a6.jpg';
 
 class UserList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            photos: [user1, user2, user3, user4, user5, user6],
-            salaries: [5000, 4890, 6500, 10000, 7100, 9600]
-        };
-        // this.photoService = new PhotoService();
+        this.state = {};
     }
 
     componentDidMount(){
@@ -48,8 +37,8 @@ class UserList extends React.Component {
                             name={ user.name }
                             email={ user.email }
                             isGoldClient={ user.isGoldClient }
-                            salary={(user.id < 7)?this.state.salaries[index]:user.salary}
-                            photo={(user.id < 7)?this.state.photos[index]:user.photo}
+                            salary={user.salary}
+                            photo={user.photo}
                             key={ index }
                             delete={(name) => this.props.delete(name)}
                         />
