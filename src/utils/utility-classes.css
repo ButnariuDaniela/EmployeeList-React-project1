@@ -1,0 +1,17 @@
+.container-min-max-width {
+    min-width: 320px;
+    max-width: 1200px;
+}
+
+.gb-color {
+    background-color: #354857;
+    font-family: system-ui;
+}
+
+.gf-color {
+    color: #f0f0f0;
+}
+
+.p-button {
+    border: #eeeced!important;
+}

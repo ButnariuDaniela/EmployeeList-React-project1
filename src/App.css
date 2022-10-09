@@ -1,6 +1,8 @@
 /* Daca vrem ca aplicatia sa ocupe intreg viewport-ul. */
 .app {
   min-height: 100vh;
+  min-width: 100vh;
+  margin: 0px;
 }
 
 .app h1 {
@@ -9,9 +11,20 @@
 
 .app .buttons-color {
   display: flex;
-  align-items: flex-start;
+  margin-top: 30px;
 }
 
 .switch-button {
-  max-width: 30%;
+  margin-top: 30px;
+}
+
+#arata-post{
+  background-color: #354857;
+  border-top: rgb(164, 147, 161);
+  box-shadow: #354857;
+  margin-top: 30px;
+  text-align: center;
+}
+body{
+  margin: 0px;
 }

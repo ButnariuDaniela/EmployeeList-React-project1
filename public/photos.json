@@ -1,0 +1,8 @@
+
+{   "proxy": "http://localhost:3000",
+    "data":[
+        {"itemImageSrc": "https://i.imgur.com/qNlMksG.jpeg","thumbnailImageSrc": "https://i.imgur.com/qNlMksG.jpeg","alt": "Echilibru, armonie, rafinament...","title": "Clasic"},
+        {"itemImageSrc": "https://i.imgur.com/tU5WGFE.jpeg","thumbnailImageSrc": "https://i.imgur.com/tU5WGFE.jpeg","alt": "Description for Image 2","title": "Standard"},
+        {"itemImageSrc": "https://i.imgur.com/83Bb4Ug.png","thumbnailImageSrc": "https://i.imgur.com/83Bb4Ug.png","alt": "Description for Image 3","title": "Modern"}
+    ]
+}

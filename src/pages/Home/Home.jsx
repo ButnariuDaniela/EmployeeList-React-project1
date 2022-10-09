@@ -6,6 +6,7 @@ import '../../App.css';
 import Layout from '../../components/Layout/Layout';
 import {Button} from 'primereact/button';
 
+
 class Home extends React.Component {
   constructor() {
     super();
@@ -22,9 +23,9 @@ class Home extends React.Component {
       .then(response => response.json())
       .then(data => {
         // console.log(data);
-        data = data.filter(user => user.id < 4);
+        data = data.filter(user => user.id < 7);
         data.forEach(user => {
-          user.isGoldClient = false;
+          user.isGoldClient = true;
         });
         this.setState({users: data});
       })
@@ -92,22 +93,33 @@ delete(name){
 
   render() {
     return(
-      <div className="app" style={{background: this.state.background, color:this.state.color}}>
+      <div className="home container-fluid" style={{background: this.state.background, color:this.state.color}}>
         <Layout>
-              <h1>INCARCARE DINAMICA UTILIZATORI</h1>
-              <div className='buttons-color'>
-                <label htmlFor='background-color'>Background color: </label>
-                <input name="background-color" type="color" className="form-control form-control-color" value='#faf8f2' onChange={(event) => this.changeColor(event)}/><br/>
-                <label htmlFor="font-color">Font color: </label>
-                <input name="font-color" type="color" className="form-control form-control-color" value="#563d7c" onChange={(event) => this.handleColorChange(event)}/><br/>
+          <div className="container-fluid container-min-max-width p-0">
+              <div className='buttons-color container justify-content-center'>
+                <div className='row'>
+                  <label htmlFor='background-color' className='col-4'>Background color: </label>
+                  <input name="background-color" type="color" className="form-control form-control-color col-2" value='#faf8f2' onChange={(event) => this.changeColor(event)}/><br/>
+                  <label htmlFor="font-color" className='col-4'>Font color: </label>
+                  <input name="font-color" type="color" className="form-control form-control-color col-2" value="#354857" onChange={(event) => this.handleColorChange(event)}/><br/>
+                </div>
               </div>
-              <Button className="switch-button p-button-raised p-button-rounded" onClick={() => this.handlePost()}>
-                {this.state.showPosts?"Arata Useri":"Arata Postari"}
-              </Button> 
-              {this.state.showPosts ? null : <UserAddForm submitAddForm={(event, name, email, isGoldClient, salary, photo) => this.submitAddForm(event, name, email, isGoldClient, salary, photo)}/>}
-              <h1>{this.state.showPosts ? "POSTARI" : "USERI"}</h1>
+              <div className='row m-0'>
+                <Button id="arata-post" className="switch-button p-button fs-2 mb-3" onClick={() => this.handlePost()}>
+                  {this.state.showPosts?"APASA PENTRU USERI":"APASA PENTRU POSTARI"}
+                </Button> 
+              </div>
+              <div className='row base-form'>
+                  {this.state.showPosts ? null : <UserAddForm submitAddForm={(event, name, email, isGoldClient, salary, photo) => this.submitAddForm(event, name, email, isGoldClient, salary, photo)}/>}
+              </div>
+              <div className='list-title gb-color gf-color rounded-0 row m-0 mt-5'>
+                <h1 className='col-12 text-md-center display-3'>{this.state.showPosts ? "POSTARI" : "USERI"}</h1>
+              </div>
               {/* {this.state.showPosts ? <PostList /> : <UserList users={this.state.users} deleteUsers={(event) => this.deleteUsers(event)}/>} */}
-              {this.state.showPosts ? <PostList /> : <UserList users={this.state.users} delete={(name) => this.delete(name)}/>}
+              <div className='row m-0'>
+                {this.state.showPosts ? <PostList /> : <UserList users={this.state.users} delete={(name) => this.delete(name)}/>}
+              </div>
+          </div>
           </Layout>
       </div>
     );

@@ -5,8 +5,10 @@ h2 {
 .user-add-form {
     display: flex;
     flex-direction: column;
+    background-color: #ebecee;
 }
 
-.user-add-form input {
-    max-width: 30%;
+.base-form {
+    background-color: #ebecee;
+    margin-top: 48px ; 
 }
