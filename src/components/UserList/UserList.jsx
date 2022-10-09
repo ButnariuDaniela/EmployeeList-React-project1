@@ -7,18 +7,6 @@ class UserList extends React.Component {
         this.state = {};
     }
 
-    componentDidMount(){
-
-        // fetch('https://jsonplaceholder.typicode.com/photos')
-        // .then(respons => respons.json())
-        // .then((objectPhotos) => {
-        //     const photosFiltered = objectPhotos.filter((photo) => photo.id < 4);
-        //     const photoOnly = photosFiltered.map((photoObj) => photoObj.url);
-        //     return this.setState({photos: photoOnly});
-        // })
-        
-    };
-
     deleteUser(event){
         let userForDelete = event.target.value;
         this.props.deleteUsers(userForDelete);
