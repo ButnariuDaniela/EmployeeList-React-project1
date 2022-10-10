@@ -53,6 +53,7 @@ class UserAddForm extends React.Component {
                             className='form-control border-light border-bottom border-danger'
                             type="text"
                             name="name"
+                            required='yes'
                             onChange={(event) => this.updateName(event)}
                         />
                     </div>
@@ -61,7 +62,7 @@ class UserAddForm extends React.Component {
                         <input
                             className='form-control border-light'
                             placeholder="name@example.com"
-                            type="text"
+                            type='email'
                             name="email"
                             onChange={(event) => this.updateEmail(event)}
                         />
@@ -80,7 +81,8 @@ class UserAddForm extends React.Component {
                         <input
                             className='form-control border-light' 
                             type="text" 
-                            name="salary"  
+                            name="salary"
+                            required='yes'  
                             onChange={(event) => this.updateSalary(event)}
                         />
                     </div>
