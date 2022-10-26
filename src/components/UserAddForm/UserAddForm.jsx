@@ -15,33 +15,33 @@ class UserAddForm extends React.Component {
     }
 
     updateName(event) {
-        this.setState({name: event.target.value});
+        this.setState({ name: event.target.value });
     }
 
     updateEmail(event) {
-        this.setState({email: event.target.value});
+        this.setState({ email: event.target.value });
     }
 
     updateIsGoldClient(event) {
-        this.setState({isGoldClient: event.target.checked});
+        this.setState({ isGoldClient: event.target.checked });
     }
 
     updatePhoto(event) {
         let path = event.target.value.split('\\')[2];
         console.log(path)
-        this.setState({photo: path})
+        this.setState({ photo: path })
     }
     updateSalary(event) {
-        this.setState({salary: event.target.value})
+        this.setState({ salary: event.target.value })
     }
 
     render() {
         console.log(this.state.name)
-        const {name, email, isGoldClient, salary, photo} = this.state;
+        const { name, email, isGoldClient, salary, photo } = this.state;
 
         return (
             <div className='d-flex row flex-fill'>
-                <img className='col-4' src={Form} alt="img"/>
+                <img className='col-4' src={Form} alt="img" />
                 <form
                     className="user-add-form d-flex col-8  justify-content-between"
                     onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient, salary, photo)}
@@ -57,7 +57,7 @@ class UserAddForm extends React.Component {
                             onChange={(event) => this.updateName(event)}
                         />
                     </div>
-                    <div>   
+                    <div>
                         <label htmlFor="email"><strong>Email:</strong></label>
                         <input
                             className='form-control border-light'
@@ -79,27 +79,27 @@ class UserAddForm extends React.Component {
                     <div>
                         <label htmlFor="salary"><strong>Salariu:</strong></label>
                         <input
-                            className='form-control border-light' 
-                            type="text" 
+                            className='form-control border-light'
+                            type="text"
                             name="salary"
-                            required='yes'  
+                            required='yes'
                             onChange={(event) => this.updateSalary(event)}
                         />
                     </div>
                     <div>
                         <label htmlFor='myImage' className='form-label'><strong>Imagine:</strong></label>
                         <input type="file"
-                                className='form-control'
-                                name="myImage" 
-                                accept="image/png, image/gif, image/jpeg" 
-                                onChange={(event) => this.updatePhoto(event)}
+                            className='form-control'
+                            name="myImage"
+                            accept="image/png, image/gif, image/jpeg"
+                            onChange={(event) => this.updatePhoto(event)}
                         />
-                        <img src={this.state.photo} alt="..." width={"200px"}/>
+                        <img src={this.state.photo} alt="..." width={"200px"} />
                     </div>
                     {this.state.name && this.state.email.includes('@') && this.state.email.includes('.')
-                    ? <input className='rounded-1 gb-color gf-color display-6 border-light' type="submit" value="Adauga utilizatorul"/> 
-                    : <div className='fs-4'>Introduceti nume si email valide</div>}
-                    
+                        ? <input className='rounded-1 gb-color gf-color display-6 border-light' type="submit" value="Adauga utilizatorul" />
+                        : <div className='fs-4'>Introduceti nume si email valide</div>}
+
                 </form>
             </div>
         )

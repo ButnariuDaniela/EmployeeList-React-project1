@@ -19,7 +19,7 @@ function About() {
             <li>Stilizati aplicatia, astfel incat sa arate mai frumos.</li>
           </ul>
         </div>
-        
+
       </Layout>
     </div>
   )

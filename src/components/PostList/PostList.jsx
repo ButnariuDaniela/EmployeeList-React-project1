@@ -7,8 +7,8 @@ import post4 from '../../assets/images/p4.jpg';
 import post5 from '../../assets/images/p5.jpg';
 import post6 from '../../assets/images/p6.jpg';
 
-class PostList extends React.Component{
-    constructor(props){
+class PostList extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             posts: [],
@@ -16,31 +16,30 @@ class PostList extends React.Component{
         };
     }
 
-    componentDidMount(){    
+    componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(response => response.json())
-        .then((objectPosts) => {
-          const postsFiltered = objectPosts.filter((post) => post.id < 7);
-          return this.setState({posts:postsFiltered});
-        })
+            .then(response => response.json())
+            .then((objectPosts) => {
+                const postsFiltered = objectPosts.filter((post) => post.id < 7);
+                return this.setState({ posts: postsFiltered });
+            })
     }
 
-    render(){
-        console.log(this.state)
-       return(
-        <div className='row m-0 d-flex'>
-            {
-                this.state.posts.map((post, index) => {
-                    return <PostItem
-                    title = {post.title}
-                    body = {post.body}
-                    photo = {this.state.photos[index]}
-                    key = {index} 
-                    />
-                })
-            }
-        </div>
-       ) 
+    render() {
+        return (
+            <div className='row m-0 d-flex'>
+                {
+                    this.state.posts.map((post, index) => {
+                        return <PostItem
+                            title={post.title}
+                            body={post.body}
+                            photo={this.state.photos[index]}
+                            key={index}
+                        />
+                    })
+                }
+            </div>
+        )
     }
 }
 

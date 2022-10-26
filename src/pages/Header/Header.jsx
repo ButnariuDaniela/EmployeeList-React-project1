@@ -5,7 +5,7 @@ import Logo from '../../assets/images/logo.png'
 
 
 function Header(props) {
-    return(
+    return (
         <header className="mb-3 w-100">
             <div className="border-bottom  container-fluid d-flex justify-content-between align-items-center display-1">
                 <Link to='/'>

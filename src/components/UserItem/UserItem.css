@@ -1,84 +1,77 @@
 #delete-button {
-    background-color: rgb(34, 95, 111);
-    border-top: rgb(164, 147, 161);
-    margin: 0px;
+  background-color: rgb(34, 95, 111);
+  border-top: rgb(164, 147, 161);
+  margin: 0px;
 }
 
 .diamon {
-    margin-left: 3rem;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+  margin-left: 3rem;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.diamon span:nth-child(1){
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent #1b74bb #1983d8 transparent;
+.diamon span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #1b74bb #1983d8 transparent;
 }
 
-.diamon span:nth-child(2){
-    position: absolute;
-    top: 0;
-    left: 20px;
-    width: 0;
-    height: 0;
-    border-width: 10px;
-    border-style: solid;
-    border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
-    animation: animate 2s linear infinite;
+.diamon span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+  animation: animate 2s linear infinite;
 }
 
-.diamon span:nth-child(3){
-    position: absolute;
-    top: 20px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-width: 10px;
-    border-style: solid;
-    border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
-    animation: animate 2s linear infinite;
+.diamon span:nth-child(3) {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+  animation: animate 2s linear infinite;
 }
 
-.diamon span:nth-child(4){
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 0;
-    height: 0;
-    border-width: 10px;
-    border-style: solid;
-    border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
-    animation: animate 2s linear infinite;
+.diamon span:nth-child(4) {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+  animation: animate 2s linear infinite;
 }
 
 @keyframes animate {
-    0%
-    {
-        border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
-    }
-    25%
-    {
-        border-color: #38a1f5 #2196f3 #1b74bb #1983d8 ;
-    }
-    50%
-    {
-        border-color:  #1983d8 #38a1f5 #2196f3 #1b74bb;
-    }
-    75%
-    {
-        border-color: #1b74bb #1983d8 #38a1f5 #2196f3 ;
-    }
-    100%
-    {
-        border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
-    }
-
+  0% {
+    border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+  }
+  25% {
+    border-color: #38a1f5 #2196f3 #1b74bb #1983d8;
+  }
+  50% {
+    border-color: #1983d8 #38a1f5 #2196f3 #1b74bb;
+  }
+  75% {
+    border-color: #1b74bb #1983d8 #38a1f5 #2196f3;
+  }
+  100% {
+    border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+  }
 }
-
